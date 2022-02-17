@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import A from '../components/a';
 import Button from '../components/button';
 import InputField from '../components/input-field';
 import Layout from '../components/layout'
 import { StatePropsType } from '../types';
 
-export default function signup() {
+export default function Signup() {
   const [state, setState] = useState<StatePropsType>({
     errors: null,
     data: {},
@@ -85,8 +86,11 @@ export default function signup() {
           onChange={onChange}
         />
         <Button type='submit'>
-          submit
+          Register
         </Button>
+        <A href='/signin'>
+          {` `}or sign in
+        </A>
       </form>
     </Layout>
   );
