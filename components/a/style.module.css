@@ -1,0 +1,16 @@
+.link {
+  color: crimson;
+  font-size: 16px;
+  border: 2px solid transparent;
+  outline: none;
+}
+.link:focus,
+.link:focus-within,
+.link:active {
+  border-style: dashed;
+  border-color: crimson;
+}
+.link:visited,
+.link:hover {
+  opacity: .7;
+}
