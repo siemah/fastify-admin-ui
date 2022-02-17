@@ -1,0 +1,15 @@
+.alert {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.alert_error {
+  background-color: crimson;
+  color: white;
+}
+.alert_success {
+  background-color: mediumspringgreen;
+  color: green;
+}
