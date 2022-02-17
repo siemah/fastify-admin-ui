@@ -1,0 +1,24 @@
+.button {
+  border: 1px solid salmon;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: salmon;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.button:hover,
+.button:focus,
+.button:active {
+  opacity: .85;
+}
+.button:focus,
+.button:active {
+  box-shadow: 
+    1px 1px 1px 1px salmon,
+    -1px 1px 1px 1px salmon,
+    1px -1px 1px 1px salmon,
+    -1px -1px 1px 1px salmon;
+}
