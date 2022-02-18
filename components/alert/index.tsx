@@ -7,7 +7,7 @@ type AlertPropsTypes = {
 };
 export default function Alert({ type = 'success', message, }: AlertPropsTypes) {
   const typeStyle = styles[`alert_${type}`];
-  console.log(typeStyle, type)
+
   if (!!message) {
     return (
       <div className={`${styles.alert} ${typeStyle}`}>

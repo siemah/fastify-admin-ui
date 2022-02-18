@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { GetServerSideProps, Redirect } from 'next';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import A from '../components/a';
@@ -6,6 +6,7 @@ import Alert from '../components/alert';
 import Button from '../components/button';
 import InputField from '../components/input-field';
 import Layout from '../components/layout'
+import { getUserData } from '../services/auth';
 import { StatePropsType } from '../types';
 
 export default function Signin() {
@@ -92,4 +93,24 @@ export default function Signin() {
       </form>
     </Layout>
   );
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const headers = {
+    cookie: String(req.headers.cookie)
+  };
+  let redirect: Redirect | undefined = undefined;
+  let user = await getUserData('http://localhost:4321', headers);
+
+  if (user?.code === 'success') {
+    redirect = {
+      destination: '/dashboard',
+      permanent: false,
+    }
+  }
+
+  return {
+    props: {},
+    redirect
+  };
 }
