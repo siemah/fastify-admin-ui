@@ -2,10 +2,16 @@
 const nextConfig = {
   reactStrictMode: true,
   async rewrites() {
-    return [{
-      source: '/api/:auth*',
-      destination: 'http://localhost:4321/api/:auth*'
-    }];
+    return [
+      {
+        source: '/api/auth/:path*',
+        destination: 'http://localhost:4321/api/auth/:path*'
+      }, 
+      {
+        source: '/api/keys/:path*',
+        destination: 'http://localhost:4321/api/keys/:path*'
+      },
+    ];
   }
 }
 
