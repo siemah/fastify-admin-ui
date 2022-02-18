@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import A from '../components/a';
 import Button from '../components/button';
 import InputField from '../components/input-field';
 import Layout from '../components/layout'
+import { getUserData } from '../services/auth';
 import { StatePropsType } from '../types';
 
 export default function Signup() {
+  const router = useRouter();
   const [state, setState] = useState<StatePropsType>({
     errors: null,
     data: {},
@@ -52,6 +55,20 @@ export default function Signup() {
       alert(error.message)
     }
   }
+
+  useEffect(() => {
+    const loadInitialData = async () => {
+      const user = await getUserData();
+      if(user?.code === 'success') {
+        router.push('/dashboard')
+      }
+    }
+    loadInitialData();
+    return () => {
+      
+    }
+  }, [])
+  
 
   return (
     <Layout title='Sign Up'>
