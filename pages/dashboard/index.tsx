@@ -1,5 +1,6 @@
 import { GetServerSideProps, Redirect } from 'next';
 import React, { useEffect, useRef, useState } from 'react'
+import ApiKeyForm from '../../components/api-key-form';
 import Layout from '../../components/layout'
 import { getUserData } from '../../services/auth';
 import { StatePropsType } from '../../types'
@@ -70,6 +71,7 @@ export default function Home() {
               ))
             )
         }
+        <ApiKeyForm />
       </div>
     </Layout>
   )
