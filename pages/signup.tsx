@@ -52,6 +52,7 @@ export default function Signup() {
         });
       }
     } catch (error) {
+      // @ts-expect-error
       alert(error.message)
     }
   }
