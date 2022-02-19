@@ -13,7 +13,7 @@ type InputFieldPropsTypes = {
 export default function InputField({ name, label, type = "text", error, autoFocus, className = '', onChange }: InputFieldPropsTypes) {
   return (
     <div className={styles.input__container}>
-      <label className={styles.input__label} htmlFor=''>
+      <label className={styles.input__label} htmlFor={name}>
         {label}
       </label>
       {
@@ -23,6 +23,7 @@ export default function InputField({ name, label, type = "text", error, autoFocu
               name={name}
               onChange={onChange}
               className={`${styles.input}${className}`}
+              id={name}
             />
           )
           : (
@@ -32,6 +33,7 @@ export default function InputField({ name, label, type = "text", error, autoFocu
               onChange={onChange}
               className={`${styles.input}${className}`}
               autoFocus={autoFocus}
+              id={name}
             />
           )
       }
