@@ -5,12 +5,16 @@ import styles from './style.module.css';
 type APropsTypes = {
   href: string;
   title?: string | undefined;
+  className?: string | undefined;
   children: React.ReactNode;
 };
-export default function A({ href, title, children }: APropsTypes) {
+export default function A({ href, title, className, children }: APropsTypes) {
   return (
     <Link href={href}>
-      <a title={title} className={styles.link}>
+      <a
+        title={title}
+        className={`${styles.link} ${className || ''}`}
+      >
         {children}
       </a>
     </Link>
