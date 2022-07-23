@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import A from '../components/a'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +22,14 @@ const Home: NextPage = () => {
           Welcome to{' '}
           <code className={styles.code}>Post API</code> admin app
         </p>
+
+        <iframe
+          src="https://www.youtube.com/embed/4-TbQnONe_w?list=RD4-TbQnONe_w"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          className='aspect-video max-w-3xl w-full hover:aspect-auto md:aspect-auto focus:aspect-4/3'
+        />
+
       </main>
 
       <footer className={styles.footer}>

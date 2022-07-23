@@ -15,7 +15,9 @@ export default function Layout({ title, description, children }: LayoutPropsType
         <title>{`${title} - ${process.env.NEXT_PUBLIC_TITLE}`}</title>
         <meta name='description' content={description || title} />
       </Head>
+      <div className='container mx-auto px-4'>
       {children}
+      </div>
     </main>
   );
 }
